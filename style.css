@@ -159,6 +159,11 @@ body {
   font-size: 1.5rem;
   color: white;
   text-decoration: none;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .tooltip {
   position: relative;
