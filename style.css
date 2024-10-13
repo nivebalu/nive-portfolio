@@ -279,6 +279,8 @@ h2 .heading-pattern {
 .right-content .top-content {
   display: flex;
   flex-direction: row;
+  margin-bottom: 30vh;
+  margin-top: 25vh;
 }
 /* General styles for the timeline */
 .timeline {
@@ -487,3 +489,45 @@ h2 .heading-pattern {
 }
 
 /* End of side navbar */
+
+.contact-me {
+  width: 60%;
+}
+.contact-me form {
+  align-items: flex-start;
+}
+
+.contact-me input {
+  padding: 15px 50px;
+  border-radius: 50px;
+  font-size: 22px;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.contact-me textarea {
+  padding: 50px;
+  border-radius: 50px;
+  font-size: 22px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.contact-me button {
+  padding: 15px 50px;
+  border-radius: 50px;
+  font-size: 28px;
+  background-color: var(--primary-accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.contact-me button:hover {
+  color: var(--primary-accent);
+  background-color: white;
+}
+
+.section {
+  margin-top: 25vh;
+}
