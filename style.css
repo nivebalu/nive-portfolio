@@ -373,6 +373,52 @@ h2 .heading-pattern {
   z-index: 1;
 }
 
+/* Progress bar styling */
+.progress-text-wrapper {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.progress-bar-skill {
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-bar-skill img {
+  width: 42px;
+  border-radius: 5px;
+  margin-left: 7px;
+}
+.progress-bar-percent {
+  font-size: 32px;
+  color: rgb(29, 158, 193);
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+.progress-bar-container {
+  width: 100%;
+  /* max-width: 1000px; */
+  margin-top: 15px;
+}
+.progress-bar {
+  height: 12px;
+  box-sizing: content-box;
+  border: 5px solid white;
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 50px;
+}
+
+.progress-meter {
+  background-color: rgb(29, 158, 193);
+  height: 100%;
+  border-radius: 50px;
+  transition: width 0.3s ease;
+}
+
 /* End of Right content */
 
 .side-navbar-icon-container {
