@@ -1,8 +1,8 @@
 :root {
   /* colors */
   --primary-accent: rgb(29, 158, 193);
-  --dark: #34495e;
-  --darker: #2c3e50;
+  --dark: #1d2429;
+  --darker: #0f1314;
 
   /* sizes */
   --portfolio-img-size: 250px;
@@ -15,6 +15,13 @@ body {
   margin: 0px;
   background-color: var(--primary-accent);
 }
+.background-waves {
+  background-image: url("./layered-waves-haikei.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .side-navbar {
   background-color: var(--dark);
   padding: 10px 5px;
@@ -109,28 +116,42 @@ body {
 }
 .social-links a {
   color: white;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  border: 5px solid rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+.social-links a:hover {
+  border-color: rgba(255, 255, 255, 1);
 }
 .resume-button {
   display: inline-block;
-  padding: 10px;
+  padding: 15px 25px;
   font-size: 1rem;
   border-radius: 50px;
   background-color: transparent;
   margin-top: 30px;
-  border: 2px solid white;
+  border: 4px solid white;
   color: white;
   cursor: pointer;
   text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.resume-button:hover {
+  background-color: white;
+  color: black;
 }
 .copyrights {
   margin-top: 50px;
   color: white;
+  filter: brightness(0.7);
 }
 
 /* End of Left content */
@@ -141,11 +162,48 @@ body {
   height: 100%;
   width: 80%;
   background-color: var(--darker);
+  padding: 30px;
 }
 
 .right-content h1,
 .right-content h2 {
   color: white;
+  text-align: left;
+}
+.right-content h1 span,
+.right-content h2 span {
+  color: var(--primary-accent);
+}
+.right-content .about-me {
+  flex: 2;
+}
+.right-content .about-me-description {
+  text-align: left;
+  color: white;
+  text-indent: 30px;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+  font-weight: normal;
+  border: none;
+  border-right: 5px solid white;
+  padding-right: 30px;
+}
+.right-content .details {
+  text-align: left;
+  flex: 1;
+  padding-left: 30px;
+  margin-top: 50px;
+}
+.right-content .details h3 span {
+  color: white;
+  font-weight: normal;
+}
+.right-content .details h3 {
+  color: var(--primary-accent);
+}
+.right-content .top-content {
+  display: flex;
+  flex-direction: row;
 }
 
 /* End of Right content */
@@ -178,9 +236,8 @@ body {
   visibility: hidden;
   font-size: 1.2rem;
   width: 140px;
-  background-color: var(--darker);
-  filter: brightness(70%);
-  color: #fff;
+  background-color: white;
+  color: black;
   text-align: center;
   border-radius: 6px;
   padding: 10px;
@@ -191,6 +248,9 @@ body {
   margin-top: -15px; /* Center vertically */
   opacity: 0;
   transition: opacity 0.3s;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .tooltip .tooltip-text::after {
@@ -201,7 +261,7 @@ body {
   margin-top: -5px; /* Center the arrow vertically */
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent transparent black; /* Arrow pointing to the right */
+  border-color: transparent transparent transparent white; /* Arrow pointing to the right */
 }
 
 .tooltip:hover .tooltip-text {
