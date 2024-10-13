@@ -1,6 +1,7 @@
 :root {
   /* colors */
   --primary-accent: rgb(29, 158, 193);
+  --primary-accent-polka: rgba(29, 158, 193, 0.1);
   --dark: #1d2429;
   --darker: #0f1314;
 
@@ -8,10 +9,11 @@
   --portfolio-img-size: 250px;
 }
 * {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   box-sizing: border-box;
 }
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
   background-color: var(--primary-accent);
 }
@@ -20,6 +22,40 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column {
+  flex-direction: column;
+}
+
+.heading-pattern {
+  display: inline-block;
+  background: radial-gradient(
+      circle at 25% 25%,
+      #1d9ec1 20%,
+      transparent 21%,
+      transparent 100%
+    ),
+    radial-gradient(circle at 75% 75%, #1d9ec1 15%, transparent 16%);
+  background-size: 0.3em 0.3em;
+  background-color: transparent;
+  opacity: 0.5;
+  transform: translate(-50%, 50%);
+}
+
+h1 .heading-pattern {
+  width: 99px;
+  height: 54px;
+}
+
+h2 .heading-pattern {
+  width: 77px;
+  height: 42px;
 }
 
 .side-navbar {
@@ -55,13 +91,40 @@ body {
 }
 .left-content {
   border-radius: 50px;
-  width: 20%;
+  width: 25%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 30px;
+  background: radial-gradient(
+      circle,
+      var(--primary-accent-polka) 10%,
+      transparent 11%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      var(--primary-accent-polka) 5%,
+      transparent 6%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      var(--primary-accent-polka) 5%,
+      transparent 6%
+    ),
+    radial-gradient(
+      circle at top left,
+      var(--primary-accent-polka) 5%,
+      transparent 6%
+    ),
+    radial-gradient(
+      circle at top right,
+      var(--primary-accent-polka) 5%,
+      transparent 6%
+    );
+  background-size: 3em 3em;
+  background-color: transparent;
 }
 .left-inner-content {
   display: flex;
@@ -69,6 +132,7 @@ body {
   justify-content: center;
   flex-direction: column;
   flex: 1;
+  opacity: 1;
 }
 .portfolio-img-container {
   height: var(--portfolio-img-size);
@@ -97,8 +161,12 @@ body {
   filter: grayscale(0);
 }
 .my-name {
+  font-size: 36px;
   margin-top: 50px;
   color: white;
+}
+.my-name span {
+  color: var(--primary-accent);
 }
 .designation {
   margin-top: 20px;
@@ -149,6 +217,7 @@ body {
   color: black;
 }
 .copyrights {
+  opacity: 1;
   margin-top: 50px;
   color: white;
   filter: brightness(0.7);
@@ -160,11 +229,17 @@ body {
   border-radius: 50px;
   border-right: none;
   height: 100%;
-  width: 80%;
+  width: 75%;
   background-color: var(--darker);
-  padding: 30px;
+  padding: 50px;
+  overflow: scroll;
 }
-
+.right-content h1 {
+  font-size: 72px;
+}
+.right-content h2 {
+  font-size: 56px;
+}
 .right-content h1,
 .right-content h2 {
   color: white;
@@ -192,7 +267,7 @@ body {
   text-align: left;
   flex: 1;
   padding-left: 30px;
-  margin-top: 50px;
+  margin-top: 150px;
 }
 .right-content .details h3 span {
   color: white;
@@ -204,6 +279,98 @@ body {
 .right-content .top-content {
   display: flex;
   flex-direction: row;
+}
+/* General styles for the timeline */
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%; /* Center the line */
+  width: 2px;
+  height: 100%;
+  background-color: #c5c5c5; /* Vertical timeline line */
+}
+
+/* Timeline item structure */
+.timeline-item {
+  display: flex;
+  margin: 20px 0;
+  position: relative;
+}
+
+.timeline-left {
+  width: 50%;
+  text-align: right;
+  padding-right: 50px;
+  position: relative;
+}
+
+.timeline-content {
+  color: white;
+  width: 50%;
+  padding-left: 50px;
+}
+
+/* Year and course on the left side */
+.timeline-left .year {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--primary-accent);
+}
+
+.timeline-left .course {
+  font-size: 22px;
+  color: white;
+  opacity: 0.8;
+}
+
+/* Institution and CGPA on the right */
+.timeline-content h3 {
+  font-size: 28px;
+  margin: 0 0 10px;
+  text-align: left;
+}
+
+.timeline-content h4 {
+  font-size: 22px;
+  margin: 0 0 10px;
+  text-align: left;
+  opacity: 0.8;
+}
+
+.timeline-content p {
+  font-size: 20px;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.timeline-content p strong {
+  color: #e74c3c; /* Highlight CGPA */
+  font-weight: bold;
+}
+
+/* Circles at each timeline event */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background-color: #3498db;
+  border-radius: 50%;
+  padding: 5px;
+  background-clip: content-box;
+  box-shadow: 0 0 0 1px white, 0 0 0 3px white;
+  z-index: 1;
 }
 
 /* End of Right content */
@@ -222,6 +389,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.side-nav-icon-link:active {
+  background: var(--primary-accent);
+  border-radius: 30%;
 }
 .tooltip {
   position: relative;
