@@ -17,6 +17,20 @@ body {
   margin: 0px;
   background-color: var(--primary-accent);
 }
+
+div::-webkit-scrollbar {
+  width: 1.5em;
+}
+div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background: var(--dark);
+}
+div::-webkit-scrollbar-thumb {
+  background-color: var(--primary-accent);
+  border-radius: 10px;
+}
+
 .background-waves {
   background-image: url("./layered-waves-haikei.svg");
   background-size: cover;
@@ -231,8 +245,14 @@ h2 .heading-pattern {
   height: 100%;
   width: 75%;
   background-color: var(--darker);
-  padding: 50px;
-  overflow: scroll;
+  padding: 25px;
+}
+.right-content-inner {
+  padding: 25px;
+  height: 100%;
+  overflow-y: scroll;
+  /* scrollbar-color: var(--primary-accent) var(--dark); */
+  scroll-behavior: smooth;
 }
 .right-content h1 {
   font-size: 72px;
@@ -530,4 +550,23 @@ h2 .heading-pattern {
 
 .section {
   margin-top: 25vh;
+}
+
+.knowledge-details {
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+  width: auto;
+  height: 30px;
+  padding: 30px;
+  background-color: var(--primary-accent);
+  margin-bottom: 30px;
+  border-radius: 30px;
+  text-align: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  line-height: 0px;
+  margin-right: 20px;
 }
