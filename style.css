@@ -549,7 +549,7 @@ h2 .heading-pattern {
 }
 
 .section {
-  margin-top: 25vh;
+  margin-top: 100px;
 }
 
 .knowledge-details {
@@ -604,6 +604,44 @@ h2 .heading-pattern {
   justify-content: center;
 }
 .cert-overlay:hover {
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+
+/* ------ personal projects -------  */
+.personal-projects {
+  margin-right: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  color: white;
+  padding: 10px;
+  border: 5px solid white;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+}
+.personal-projects img {
+  display: block;
+  width: 260px;
+  aspect-ratio: 1.6;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.personal-projects-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  color: white;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.personal-projects-overlay:hover {
   background: rgba(0, 0, 0, 0.3);
   opacity: 1;
 }
