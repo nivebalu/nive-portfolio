@@ -628,7 +628,7 @@ h2 .heading-pattern {
   display: block;
   width: 260px;
   aspect-ratio: 1.6;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 5px;
 }
 .personal-projects-overlay {
